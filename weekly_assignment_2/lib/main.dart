@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //Created decroation for the textField to have a more visible box as well as have a text indicating what the field is for
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'First name',
+                labelText: 'First Name',
               ),
               //onChange requires a function with a parameter. The 'text' parameter is what is being typed and onChanged updates the temp variable with it in live time
               onChanged: (text) {
