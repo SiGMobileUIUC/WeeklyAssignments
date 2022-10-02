@@ -7,24 +7,49 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:weekly_assignment_2/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('There are two TextField widgets', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that there are two TextFields
+    expect(find.byType(TextField), findsNWidgets(2));
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  testWidgets('There is a TextField with the label "First Name"', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MyApp());
+
+    // Verify that there is one TextField with label "First Name"
+    expect(find.text("First Name"), findsOneWidget);
+  });
+
+  testWidgets('There is a TextField with the label "Last Name"', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MyApp());
+
+    // Verify that there is one TextField with label "last Name"
+    expect(find.text("Last Name"), findsOneWidget);
+  });
+
+  testWidgets('OnSubmitting a First Name and a Last Name, the Text widget shows correct output',
+      (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MyApp());
+
+    expect(find.text("Hello John Doe"), findsNothing);
+
+    // Verify that there is one TextField with label "Last Name"
+    await tester.enterText(find.byType(TextField).first, "John");
+    await tester.testTextInput.receiveAction(TextInputAction.done);
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await tester.enterText(find.byType(TextField).last, "Doe");
+    await tester.testTextInput.receiveAction(TextInputAction.done);
+    await tester.pump();
+
+    expect(find.text("Hello John Doe"), findsOneWidget);
   });
 }
