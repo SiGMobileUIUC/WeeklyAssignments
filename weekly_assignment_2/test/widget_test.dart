@@ -50,6 +50,9 @@ void main() {
     await tester.testTextInput.receiveAction(TextInputAction.done);
     await tester.pump();
 
-    expect(find.text("Hello John Doe"), findsOneWidget);
+    await tester.tap(find.byType(FloatingActionButton));
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining("Hello John Doe"), findsOneWidget);
   });
 }
