@@ -1,3 +1,3 @@
-\#Weekly Assignments! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
+#Weekly Assignments! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
 Repository for the weekly assignments
