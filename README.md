@@ -23,11 +23,13 @@
 
 - :mailbox: Each week we plan to release a base template along with test cases for the assignment that you to attempt or complete before the next meeting.
 
-- :pencil: In order to get started you should click on green 'code' button and copy the url. Then proceeed to the terminal where you will type git clone insert-url-here, but instead you will put the url you copied where it says 'insert-url-here' and hit enter.
+- :pencil: In order to get started you should click 'fork' in the top right in order to create your own personal copy of the repository
 
-- :computer: As you work on the assignment you will want to run the debugger to check if you are passing any or all test cases. The debugger will let you know what you are missing/have completed.
+- :airplane: Then, in your forked repository, should click on green 'code' button and copy the url. Then proceeed to the terminal where you will type 'git clone <insert-url-here>' without the quotes and hit enter.
 
-- :heavy_check_mark: Once you are finished you can submit a pull request to this repository.
+- :computer: As you work on the assignment you will want to run the debugger to check if you are passing any or all test cases. The debugger will let you know what you are missing/have completed. Then you will want to push your changes to your forked repository by typing git push once in the directory of your repository.
+
+- :heavy_check_mark: Once you are finished you can submit a pull request to this repository with your forked repository.
 
 ---
 
