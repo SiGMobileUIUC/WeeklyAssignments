@@ -22,6 +22,7 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+  @override
   State<MyHomePage> createState() {
     return _MyHomePageState();
   }
@@ -40,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -49,48 +51,42 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(top: 5, bottom: 5),
-              child: TextField(
-                onChanged: (text) {
-                  setState(() {
-                    _firstName = text;
-                  });
-                },
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  label: Text('First name'),
-                ),
+            const Divider(),
+            TextField(
+              onChanged: (text) {
+                setState(() {
+                  _firstName = text;
+                });
+              },
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                label: Text('First name'),
               ),
             ),
-            Container(
-              margin: const EdgeInsets.only(top: 5, bottom: 5),
-              child: TextField(
-                onChanged: (text) {
-                  setState(() {
-                    _lastName = text;
-                  });
-                },
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  label: Text('Last name'),
-                ),
+            const Divider(),
+            TextField(
+              onChanged: (text) {
+                setState(() {
+                  _lastName = text;
+                });
+              },
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                label: Text('Last name'),
               ),
             ),
+            const Divider(),
             Text(
               _displayedText,
               style: Theme.of(context).textTheme.headline4,
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: FloatingActionButton(
-                onPressed: _onSubmit,
-                tooltip: 'submit',
-                child: const Icon(Icons.add),
-              ),
-            )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _onSubmit,
+        tooltip: 'submit',
+        child: const Icon(Icons.add),
       ),
     );
   }
