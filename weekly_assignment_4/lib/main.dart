@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       home: const NavHomePage(),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/botNavBar': (context) => BotNavBar(),
-        '/navRail': (context) => NavRail(),
+        '/botNavBar': (context) => const BotNavBar(),
+        '/navRail': (context) => const NavRail(),
       },
     );
   }
@@ -52,7 +52,7 @@ class NavHomePageState extends State<NavHomePage> {
                         const EdgeInsets.all(10.0),
                       ),
                     ),
-                    child: Text('Go to bottom navigation bar'),
+                    child: const Text('Go to bottom navigation bar'),
                     onPressed: () {
                       Navigator.pushNamed(context, '/botNavBar');
                     },
@@ -64,7 +64,7 @@ class NavHomePageState extends State<NavHomePage> {
                         const EdgeInsets.all(10.0),
                       ),
                     ),
-                    child: Text('Go to navigation rail'),
+                    child: const Text('Go to navigation rail'),
                     onPressed: () {
                       Navigator.pushNamed(context, '/navRail');
                     },
@@ -174,15 +174,15 @@ class BotNavBarState extends State<BotNavBar> {
         children: [
           Container(
             alignment: Alignment.center,
-            child: const Text('home'),
+            child: const Text('Home'),
           ),
           Container(
             alignment: Alignment.center,
-            child: const Text('profile'),
+            child: const Text('Profile'),
           ),
           Container(
             alignment: Alignment.center,
-            child: const Text('settings'),
+            child: const Text('Settings'),
           ),
         ],
       ),
@@ -190,15 +190,15 @@ class BotNavBarState extends State<BotNavBar> {
         currentIndex: _curNavIdx,
         items: const [
           BottomNavigationBarItem(
-            label: 'home',
+            label: 'Home',
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            label: 'profile',
+            label: 'Profile',
             icon: Icon(Icons.person),
           ),
           BottomNavigationBarItem(
-            label: 'settings',
+            label: 'Settings',
             icon: Icon(Icons.settings),
           ),
         ],
