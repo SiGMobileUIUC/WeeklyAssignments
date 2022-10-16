@@ -1,8 +1,8 @@
-# Weekly Assignment #2
+# Weekly Assignment #3
 
 <div id="header" align="center">
 <h2>
-  This weeks assignment will be Name Concatenation
+  This weeks assignment will be a ListView app
 </h2>
 </div>
 
