@@ -1,16 +1,23 @@
-# weekly_assignment_4
+# Weekly Assignment #4
 
-A new Flutter project.
+<div id="header" align="center">
+<h2>
+  This weeks assignment will be Multi-Navigation Stacked App
+</h2>
 
-## Getting Started
+  <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="200"/>
+ 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+---
+</div>
+<img src = "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width = "50px"> 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+-
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+If you are stuck/confused by any of the steps click on the icon below to go to the slides which provide more detailed steps.
+
+<a href="https://docs.google.com/presentation/d/1p763v7AqL3W8aXjxBjI61HB9NGJOhlv5xXSFz3rQcNs/edit?usp=sharing">
+    <img src="https://img.shields.io/badge/Slides-yellow?style=for-the-badge&logo=google drive&logoColor=white" alt="Google Drive Badge"/>
