@@ -8,7 +8,7 @@
 
   
  <div align="center">
-<img src = "https://github.com/SiGMobileUIUC/WeeklyAssignments/blob/main/pictures/weekly_assignment_1.gif?raw=true" width= "500"/>
+<img src = "https://github.com/SiGMobileUIUC/WeeklyAssignments/blob/main/pictures/weekly_assignment_1.gif?raw=true" width= "200"/>
 
 
 ---
