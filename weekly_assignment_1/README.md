@@ -25,7 +25,11 @@
 
 - :computer: You will need to construct a scaffolding that contains a text Widget inside that displays either "FizzBuzz", "Fizz", or "Buzz" based on the integer value stored privately.
 
-- :phone: 
+- :phone: Then in order to control the integer value you will want to create 3 buttons: 1 that increments the integer value, 1 that decrements that integer value, and 1 that sets the integer value to 0. You should place these floating action buttons in a row as well. 
+
+- :battery: To make these buttons function properly you will need to create 3 functions that use the setState function to tell Flutter to update the screen with the newly changed values.
+
+- :cd: Lastly, for the logic of the problem, you will want to display "FizzBuzz" when the Integer stored is divisible by BOTH 3 & 5, "Fizz" when the Integer stored is divisible by ONLY 3, "Buzz" when the Integer stored is divisible by ONLY 5, and nothing or a "--" when the Integer stored is divisible by neither.
 
 
 ---
