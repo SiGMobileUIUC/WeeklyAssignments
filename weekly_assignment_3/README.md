@@ -9,13 +9,24 @@
   
  <div align="center">
 <img src = "https://github.com/SiGMobileUIUC/WeeklyAssignments/blob/main/pictures/weekly_assignment_3.gif?raw=true" width= "200"/>
-
+</div>
 
 ---
 
+<div align="left">
+<div>
 <img src = "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width = "50px"> 
+</div>
 
--
+-:tv: 
+
+-:cd: 
+
+-:book: 
+
+-:mag: 
+
+-:keyboard: 
 
 ---
 
@@ -24,6 +35,7 @@ If you are stuck/confused by any of the steps click on the icon below to go to t
 <a href="https://docs.google.com/presentation/d/1DkN3cesyVT8BxITnixO0JImJifSX3G7BcAeYc-nCjB8/edit?usp=sharing">
     <img src="https://img.shields.io/badge/Slides-yellow?style=for-the-badge&logo=google drive&logoColor=white" alt="Google Drive Badge"/>
 </div>
+
 ---
 
 <div align="center">
