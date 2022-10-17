@@ -15,10 +15,9 @@
 
 ---
 
+<div>
+<img src = "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width = "50px">
 </div>
-<img src = "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width = "50px"> 
-</div>
-
 -:tv: 
 
 -:cd: 
