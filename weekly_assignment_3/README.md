@@ -20,13 +20,15 @@
 
 -:tv: For this assignment you will want to use a ListView builder to easily create 12 listTiles that you will display with values connected to each.
 
--:cd: Inside the builder you will want to 
+-:cd: Inside the builder you will want to have a leading widget of a CircleAvatar that has a random color for each ListTile.
 
--:book: 
+-:book: Inside the builder you will also want to have a title that says "I am a ListTile", as well as a subtitle that shows the index in the format    
 
--:mag: 
+"Index: 2".
 
--:keyboard: 
+-:keyboard: Before we get to the last part of the builder, we will want to create a list<int> of indeces outside the build widget so that we can keep track of each listTile.
+
+-:mag: After the other parameters of the listTile you will want a way to remove each listTile and for that we will use an IconButton that calls a external function that uses setState to update list of indices by removing the specific index and updating the screen.
 
 ---
 
