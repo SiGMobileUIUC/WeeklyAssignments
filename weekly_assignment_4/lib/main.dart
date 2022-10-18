@@ -95,8 +95,7 @@ class NavHomePageState extends State<NavHomePage> {
   }
 }
 
-//Navigation Rail
-
+//Navigation Rail widget that we call to navigate to a new screen with just the rail
 class NavRail extends StatefulWidget {
   const NavRail({Key? key}) : super(key: key);
 
@@ -105,7 +104,9 @@ class NavRail extends StatefulWidget {
 }
 
 class _NavRailState extends State<NavRail> {
+  //Creating private variable for index of what screen to be on
   int _selectedIndex = 0;
+  //Labeltype for the navigation rail to use later on when creating the builder
   NavigationRailLabelType labelType = NavigationRailLabelType.all;
 
   @override
@@ -116,16 +117,23 @@ class _NavRailState extends State<NavRail> {
       ),
       body: Row(
         children: <Widget>[
+          //First child is a NavigationRail widget that houses similar feature to a bottom navigation bar
           NavigationRail(
+            //LableType defines the layout and behavior of the labels for the default,
             labelType: labelType,
+            //selectedIndex sets the current index of the rail to the private variable stored above
             selectedIndex: _selectedIndex,
+            //This is the function called when any of the destinations on the rail are pressed by the user
             onDestinationSelected: (int index) {
               setState(() {
+                //setState function to update the private variable with the new index selected as well as update the screen
                 _selectedIndex = index;
               });
             },
             destinations: const <NavigationRailDestination>[
+              //Created multiple NavigationRailDestinations which are each a part of a list
               NavigationRailDestination(
+                //Each destination requires an icon and label. 
                 icon: Icon(Icons.favorite_border),
                 selectedIcon: Icon(Icons.favorite),
                 label: Text('Favorite'),
@@ -142,9 +150,17 @@ class _NavRailState extends State<NavRail> {
               ),
             ],
           ),
+          //Wrapped an indexStack with an Expanded widget so that the containers extend to the edges of the screen
           Expanded(
+            //An indexedStack is a widget to store a list of wdigets to display based on the selected index
+            //This is usually paired with a bottom navigation bar or a navigation rail to efffectively display 
+            //different "screens" when clicking on different destinations/icons
             child: IndexedStack(
+              //Current index is set the private variable we initialized and are updating above
               index: _selectedIndex,
+              //Children is the list of widgets that we display based on their index
+              //Each index is already set based on the order that they are in in the list
+              //So it starts from 0 -> 1 -> 2 -> ...
               children: [
                 Container(
                   alignment: Alignment.center,
@@ -167,8 +183,7 @@ class _NavRailState extends State<NavRail> {
   }
 }
 
-//Bottom Navigation Bar
-
+//Bottom Navigation Bar widget
 class BotNavBar extends StatefulWidget {
   const BotNavBar({Key? key}) : super(key: key);
 
