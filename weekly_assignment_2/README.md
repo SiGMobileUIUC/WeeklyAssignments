@@ -18,15 +18,16 @@
 <div>
 <img src = "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width = "50px">
 </div>
--:tv: 
 
--:cd: 
+-:desktop_computer: To begin this assignment you will want to pull the changes from the weekly assignment repository and start your debugger for your emulator.
 
--:book: 
+-:floppy_disk: In this assignment you will be using 2 textFields to take in strings typed by the user and display a concatenated message after pushing a button.
 
--:mag: 
+-:vhs: To use the 2 textFields you will want to have 2 textEditingControllers, one for each textField, so that the user can control/type into each textField without any interference. 
 
--:keyboard: 
+-:bulb: You will also want to store temporary private variables as well as final private variables that you will use to store the strings typed by the user in each textField and the final concatenated string that you will want to display.
+
+-:moneybag: Now for the button, you will want to make the button call a setState function that only displays the final String and only changes it to the temporary values once the button is pressed. 
 
 
 ---
