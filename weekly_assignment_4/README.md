@@ -39,11 +39,11 @@
  
 -:books: The syntax is different for the navigation rail as it will need to have a destinations list instead of an items list and a onDestinationSelected parameter that is similar to the onTap in bottom Navigation bar.
  
--:label:
+-:label: Inside the destinations list you will want to create 3 destinations that correspond the containers that you will display on the screen next to it in the indexedStack.
  
--:unlock: 
+-:unlock: In the onDestinationSelected parameter you will want to use the setState function to update the index like what we did with onTap in the bottom navigation bar
  
--✔️
+-✔️Lastly, make sure all the navigation features work and check the test cases before you submit a pull request.
 
 ---
 
