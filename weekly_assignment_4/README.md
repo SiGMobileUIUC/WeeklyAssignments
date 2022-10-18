@@ -19,15 +19,15 @@
 <img src = "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width = "50px">
 </div>
  
--:tv: 
+-:scroll: 
 
--:cd: 
+-:coin: 
 
--:book: 
+-:e-mail: 
 
--:mag: 
+-:mailbox: 
 
--:keyboard: 
+-:pen: 
 
 
 ---
