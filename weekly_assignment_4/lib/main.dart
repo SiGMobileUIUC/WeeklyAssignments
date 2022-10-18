@@ -192,6 +192,7 @@ class BotNavBar extends StatefulWidget {
 }
 
 class BotNavBarState extends State<BotNavBar> {
+  //Index to keep track of the index of what screen is within the bottom navigation bar
   int _curNavIdx = 0;
 
   @override
@@ -200,9 +201,14 @@ class BotNavBarState extends State<BotNavBar> {
       appBar: AppBar(
         title: const Text('Bottom Navigation Bar'),
       ),
+      //Setting the body to be an indexedStaack like I did in the navigation rail as we can use a Scaffolding here
       body: IndexedStack(
+        //Setting the index of the indexed stack to that of the privately stored integer that keeps track of
+        //The index of what button is being pressed in the bottom navigation bar
         index: _curNavIdx,
         children: [
+          //Created 3 containers named 'home', 'profile', and 'settings' corresponding to the labels on the 
+          //bottom navigation bar
           Container(
             alignment: Alignment.center,
             child: const Text('Home'),
@@ -217,10 +223,15 @@ class BotNavBarState extends State<BotNavBar> {
           ),
         ],
       ),
+      //You can place a bottom navigation bar after the body just like a floating action button
       bottomNavigationBar: BottomNavigationBar(
+        //Sets the current Index of the bottom navigation bar to the privately stored index above
         currentIndex: _curNavIdx,
         items: const [
+          //Inside the items, which is a list of BottomNavigationBarItems, it's similar to the 
+          //Destinations for the navigation rail
           BottomNavigationBarItem(
+            //Inside each item you will need a label and an icon
             label: 'Home',
             icon: Icon(Icons.home),
           ),
@@ -234,6 +245,9 @@ class BotNavBarState extends State<BotNavBar> {
           ),
         ],
         onTap: ((value) => setState(() {
+          //On tap function called when any of the buttons are pressed
+          //Passes the index value stored into the setState function to update the privately
+          //Stored integer above to update the screen with the IndexedStack
               _curNavIdx = value;
             })),
       ),
