@@ -18,9 +18,9 @@
 <img src = "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width = "50px"> 
 </div>
 
--:tv: 
+-:tv: For this assignment you will want to use a ListView builder to easily create 12 listTiles that you will display with values connected to each.
 
--:cd: 
+-:cd: Inside the builder you will want to 
 
 -:book: 
 
