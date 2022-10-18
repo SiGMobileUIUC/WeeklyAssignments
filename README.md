@@ -15,7 +15,12 @@
   <a href="https://discord.gg/4P898ARnUk">
     <img src="https://img.shields.io/badge/Discord-blueviolet?style=for-the-badge&logo=discord&logoColor=white" alt="Discord Badge"/>
   </a>
+  <a href="https://www.linkedin.com/company/sigmobile/">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
 </div>
+
+
 
 ---
 </div>
