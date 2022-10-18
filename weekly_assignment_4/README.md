@@ -29,15 +29,15 @@
 
 -:pen: For the textButton to navigate to the navigation rail you will want to do a similar thing except have a text saying "Go to navigation rail" with an onPressed function that calls Navigator.pushNamed(conext, '/routeForNavigationRail') (You don't actually have to name the route that but it's just to explain what it does)
  
--:rocket: 
+-:rocket: You should style these buttons so that they are easier to see for the user since the default background color is white.
  
--:mage: 
+-:mage: Inside the bottom navigation bar, you will want to do set up a scaffolding that will carry an IndexedStack to display the correct container. Below the body you will need to create a bottomNavigationBar that will hold a list of 3 items inside the items parameter.
  
--:battery:
+-:battery: Inside the bottom navigation bar you will need to have a setState function inside the onTap parameter. You will want to update the private variable that keeps track of the index. 
 
--:bulb: 
+-:bulb: Inside the navigation rail, you will want to have a similar structure that of the bottom navigation bar screen. You will want to have an indexedStack that holds a list of the containers that you will want to display.
  
--:books:
+-:books: The syntax is different for the navigation rail as it will need to have a destinations list instead of an items list and a onDestinationSelected parameter that is similar to the onTap in bottom Navigation bar.
  
 -:label:
  
