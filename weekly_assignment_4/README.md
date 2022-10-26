@@ -21,7 +21,7 @@
  
 -:scroll: To begin the assignment you may want to keep up the meeting slides or the flutter documentation since there's a lot of different parts to this weekly assignment.
 
--:coin: After getting your debugger/emulator setup you will want to create 3 stateless widgets, one to hold each of the 3 major screens that we will use in this weekly assignment. The first being the main page that we will use to navigate to the other 2. The 2nd and 3rd widgets will be a screen for the bottom navigation bar and the other one being for the navigation rail.
+-:coin: After getting your debugger/emulator setup you will want to create 3 stateful widgets, one to hold each of the 3 major screens that we will use in this weekly assignment. The first being the main page that we will use to navigate to the other 2. The 2nd and 3rd widgets will be a screen for the bottom navigation bar and the other one being for the navigation rail.
  
 -:mailbox: Now before we get into each of the screens we will want to create the routes to each screen inside the MyApp class, inside the Material App specifically. In this widget you will want to write routes: {}, which will contain a route name, context to pass in, and a destination for each route (In this case it's the bottom navigation bar and navigation rail screen)
 
