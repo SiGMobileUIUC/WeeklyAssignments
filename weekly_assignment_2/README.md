@@ -40,6 +40,17 @@ If you are stuck/confused by any of the steps click on the icon below to go to t
     
 </div>
 
+<div align="center">
+
+<a href="https://www.youtube.com/watch?v=b_sQ9bMltGU">
+  <img src="https://img.youtube.com/vi/b_sQ9bMltGU/0.jpg" 
+       alt="Tutorial Video" 
+       width="240" 
+       height="180" 
+       border="10" />
+</a>
+</div>
+
 ---
 
 <div align="center">
