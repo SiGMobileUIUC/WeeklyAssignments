@@ -8,6 +8,13 @@
 
   
 <div align="center">
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YQP6GtVUfpIg
+" target="_blank"><img src="http://img.youtube.com/vi/QP6GtVUfpIg/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+</div>
+
+<div align="center">
 <img src = "https://github.com/SiGMobileUIUC/WeeklyAssignments/blob/main/pictures/weekly_assignment_1.gif?raw=true" width= "200"/>
 </div>
 
