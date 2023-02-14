@@ -65,7 +65,8 @@ void main() {
     expect(find.text('1'), findsNothing);
   });
 
-  testWidgets('Fizz shows up when the counter is divisible by 3', (WidgetTester tester) async {
+  testWidgets('Fizz shows up when the counter is divisible by 3',
+      (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
@@ -79,7 +80,8 @@ void main() {
     expect(find.text('fizz'), findsOneWidget);
   });
 
-  testWidgets('Buzz shows up when the counter is divisible by 5', (WidgetTester tester) async {
+  testWidgets('Buzz shows up when the counter is divisible by 5',
+      (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
@@ -93,7 +95,8 @@ void main() {
     expect(find.text('buzz'), findsOneWidget);
   });
 
-  testWidgets('FizzBuzz shows up when the counter is divisible by 3 & 5', (WidgetTester tester) async {
+  testWidgets('FizzBuzz shows up when the counter is divisible by 3 & 5',
+      (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 

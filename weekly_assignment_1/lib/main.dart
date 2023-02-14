@@ -81,10 +81,10 @@ class _MyHomePageState extends State<MyHomePage> {
   _getMessage(int c) {
     var output = '';
     if (c % 3 == 0) {
-      output = '${output}Fizz';
+      output = '${output}fizz';
     }
     if (c % 5 == 0) {
-      output = '${output}Buzz';
+      output = '${output}buzz';
     }
     return output;
   }
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 FloatingActionButton(
                     onPressed: _decrementCounter,
-                    child: const Icon(Icons.horizontal_rule)),
+                    child: const Icon(Icons.remove)),
                 FloatingActionButton(
                   onPressed: _incrementCounter,
                   child: const Icon(Icons.add),
