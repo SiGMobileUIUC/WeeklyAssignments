@@ -26,7 +26,7 @@
 </div>
 <img src = "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width = "50px"> 
 
-- :mailbox: Each week we plan to release a base template along with test cases for the assignment that you to attempt or complete before the next meeting.
+- :mailbox: Each week we plan to release a base template along with test cases for the assignment that you to attempt or complete before the next.
 
 - :pencil: In order to get started you should click 'fork' in the top right in order to create your own personal copy of the repository
 
