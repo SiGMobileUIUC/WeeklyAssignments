@@ -57,6 +57,18 @@ If you are stuck/confused by any of the steps click on the icon below to go to t
 </div>
 
   
+</div>
+
+
+Below are also some links to the documentation for new Flutter Widgets/methods used in this assignment
+
+</div> 
+  
+FloatingActionButton: https://api.flutter.dev/flutter/material/FloatingActionButton-class.html
+  
+setState method: https://api.flutter.dev/flutter/widgets/State/setState.html
+
+  
 ---
 
 <div align="center">
