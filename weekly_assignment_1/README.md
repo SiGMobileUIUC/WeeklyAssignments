@@ -34,6 +34,21 @@
 
 ---
 
+<div align="center">
+
+Below is a video going over the process behind creating the solution to FizzBuzz!
+
+<a href="https://www.youtube.com/watch?v=rASGos-l-vQ">
+  <img src="https://img.youtube.com/vi/rASGos-l-vQ/0.jpg" 
+       alt="Weekly Assignment #1 Solution Guide" 
+       width="400" 
+       height="300" 
+       border="10" />
+</a>
+</div>
+
+---
+
 If you are stuck/confused by any of the steps click on the icon below to go to the slides which provide more detailed steps.
 
 
@@ -41,16 +56,6 @@ If you are stuck/confused by any of the steps click on the icon below to go to t
     <img src="https://img.shields.io/badge/Slides-yellow?style=for-the-badge&logo=google drive&logoColor=white" alt="Google Drive Badge"/>
 </div>
 
- <div align="center">
-
-<a href="https://www.youtube.com/watch?v=b_sQ9bMltGU">
-  <img src="https://img.youtube.com/vi/b_sQ9bMltGU/0.jpg" 
-       alt="Tutorial Video" 
-       width="240" 
-       height="180" 
-       border="10" />
-</a>
-</div>
   
 ---
 
