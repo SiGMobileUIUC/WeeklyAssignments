@@ -46,6 +46,26 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  /*
+  //If you wanted to use a textEditingController you would need to create a variable for it and initialize it in initState
+
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  //If you were to implement a textEditingController you would need to dispose of it when the widget is done being used
+  
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+  */
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,8 +81,10 @@ class _MyHomePageState extends State<MyHomePage> {
             const Divider(),
             // Text field is a stateful widget that has a real-time updating box in which you can use your keyboard to type words
             TextField(
-              // Created decroation for the textField to have a more visible box as well as have a text indicating what the field is for
+              //If you wanted to use a textEditingController you would need to set the controller to the variable you created like shownd below
+              //controller: _controller,
               decoration: const InputDecoration(
+                // Created decroation for the textField to have a more visible box as well as have a text indicating what the field is for
                 border: OutlineInputBorder(),
                 labelText: 'First Name',
               ),
