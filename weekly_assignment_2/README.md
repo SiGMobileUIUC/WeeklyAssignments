@@ -46,11 +46,25 @@ Below is a video going over the process behind creating the solution to Name Con
 
 ---
 
+<div align="left">
 If you are stuck/confused by any of the steps click on the icon below to go to the slides which provide more detailed steps.
+</div>
+
+<div>
+&nbsp;
+</div>
+
+<div align = "left>
 
 <a href="https://docs.google.com/presentation/d/1IHM83iHkSUcHfKUi7qxKUPJAQy8jlp07rkNyiG3VQ9E/edit?usp=sharing">
     <img src="https://img.shields.io/badge/Slides-yellow?style=for-the-badge&logo=google drive&logoColor=white" alt="Google Drive Badge"/>
     
+&nbsp;
+
+TextField Documentation: https://api.flutter.dev/flutter/material/TextField-class.html
+
+TextEditing Controller Documentation: https://api.flutter.dev/flutter/widgets/TextEditingController-class.html
+
 </div>
 
 ---
