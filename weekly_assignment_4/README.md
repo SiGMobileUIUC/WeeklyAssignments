@@ -82,6 +82,3 @@ If you are stuck/confused by any of the steps click on the icon below to go to t
 <div align="center">
  <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="200"/>
 </div>
-
-
->>>>>>> d09dc868e52ed982378c8ff2e129b5420552c85e
