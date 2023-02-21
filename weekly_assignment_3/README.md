@@ -32,13 +32,8 @@
 
 ---
 
-If you are stuck/confused by any of the steps click on the icon below to go to the slides which provide more detailed steps.
-
-<a href="https://docs.google.com/presentation/d/1DkN3cesyVT8BxITnixO0JImJifSX3G7BcAeYc-nCjB8/edit?usp=sharing">
-    <img src="https://img.shields.io/badge/Slides-yellow?style=for-the-badge&logo=google drive&logoColor=white" alt="Google Drive Badge"/>
-</div>
-
 <div align="center">
+Below is a video going over the process behind creating the solution to ListView App!
 
 <a href="https://www.youtube.com/watch?v=b_sQ9bMltGU">
   <img src="https://img.youtube.com/vi/b_sQ9bMltGU/0.jpg" 
@@ -47,6 +42,23 @@ If you are stuck/confused by any of the steps click on the icon below to go to t
        height="180" 
        border="10" />
 </a>
+</div>
+
+---
+
+<div align="left">
+If you are stuck/confused by any of the steps click on the icon below to go to the slides which provide more detailed steps.
+
+</div>
+
+<div>
+&nbsp;
+</div> 
+
+<div align="left">
+<a href="https://docs.google.com/presentation/d/1DkN3cesyVT8BxITnixO0JImJifSX3G7BcAeYc-nCjB8/edit?usp=sharing">
+    <img src="https://img.shields.io/badge/Slides-yellow?style=for-the-badge&logo=google drive&logoColor=white" alt="Google Drive Badge"/>
+    
 </div>
 
 ---
