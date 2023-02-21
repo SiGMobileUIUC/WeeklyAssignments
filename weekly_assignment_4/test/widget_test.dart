@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-<<<<<<< HEAD
 
 import 'package:weekly_assignment_4/main.dart';
 
@@ -27,7 +26,7 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
-=======
+
 import 'package:weekly_assignment_4/main.dart';
 
 void main() {
@@ -262,6 +261,5 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.bySubtype<ButtonStyleButton>(), findsNWidgets(2));
->>>>>>> d09dc868e52ed982378c8ff2e129b5420552c85e
   });
 }
