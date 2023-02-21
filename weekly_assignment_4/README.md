@@ -47,6 +47,7 @@
 
 ---
 
+Below is a video going over the process behind creating the solution to Multi-Navigation Stacked App!
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=b_sQ9bMltGU">
