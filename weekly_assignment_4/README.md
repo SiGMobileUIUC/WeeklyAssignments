@@ -50,8 +50,8 @@
 Below is a video going over the process behind creating the solution to Multi-Navigation Stacked App!
 <div align="center">
 
-<a href="https://www.youtube.com/watch?v=b_sQ9bMltGU">
-  <img src="https://img.youtube.com/vi/b_sQ9bMltGU/0.jpg" 
+<a href="https://www.youtube.com/watch?v=-RG9kj0-yhw">
+  <img src="https://img.youtube.com/vi/-RG9kj0-yhw/0.jpg" 
        alt="Tutorial Video" 
        width="240" 
        height="180" 
