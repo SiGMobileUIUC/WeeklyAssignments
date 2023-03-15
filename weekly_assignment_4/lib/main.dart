@@ -6,132 +6,70 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const NavHomePage(),
-      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
-        '/botNavBar': (context) => BotNavBar(),
-        '/navRail': (context) => NavRail(),
-        //Creating routes to use Navigator.pushNamed later with ease
         '/botNavBar': (context) => const BotNavBar(),
-        //The first part is the name of the route that you will call, 
-        //the 2nd part is the context that you will pass to the new route
-        //Last part is obviously the destination of the route
-        '/navRail': (context) => const NavRail(),
+        '/NavRail': (context) => const NavRail(),
       },
     );
   }
 }
 
-//Home page that has 2 buttons, 1 that leads to the Screen with a bottom navigation bar and the other that has a navigation rail
-class NavHomePage extends StatefulWidget {
-  const NavHomePage({Key? key}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+  final String title;
 
   @override
-  State<NavHomePage> createState() => NavHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class NavHomePageState extends State<NavHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    //We're using a scaffold here to allow us to have an appbar to display the title as well as a body to house the 2 buttons needed
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Navigation Weekly Assignment'),
+        title: Text(widget.title),
       ),
-      body: Align(
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SafeArea(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.black),
-                      padding: MaterialStateProperty.all(
-                        const EdgeInsets.all(10.0),
-                      ),
-                    ),
-                    child: Text('Go to bottom navigation bar'),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/botNavBar');
-                    },
-                  ),
-                  TextButton(
-        //We aligned the buttons in the center of the screen for better visibilty
-        alignment: Alignment.center,
-        //We used a column to be able to center the buttons vertically
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // We wrapped the Row with a SafeArea so that the buttons aren't on the edges of the screen
-            SafeArea(
-              child: Row(
-                //Used a row to organize the buttons horizontally for visual clarity
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  //Used textButtons to navigate between the main screen and the bottom navigation bar in this case
-                  TextButton(
-                    style: ButtonStyle(
-                      //Used buttonStyle to add a background color and padding between each button
-                      backgroundColor: MaterialStateProperty.all(Colors.black),
-                      //when using ButtonStyle you will want to use MaterialStateProperty rather than just Colors.red
-                      //For most parameters as this was a change made that we have to adapt to
-                      padding: MaterialStateProperty.all(
-                        //10 Pixels of padding around this button
-                        const EdgeInsets.all(10.0),
-                      ),
-                    ),
-                    child: const Text('Go to bottom navigation bar'),
-                    onPressed: () {
-                      //Calling Navigator.pushNamed to navigate to a set route we created earlier for the navigation rail
-                      Navigator.pushNamed(context, '/botNavBar');
-                    },
-                  ),
-                  //Used textButtons to navigate between the main screen and the navigation rail in this case
-                  TextButton(
-                    //Similar style and function called when button is pressed
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.black),
-                      padding: MaterialStateProperty.all(
-                        const EdgeInsets.all(10.0),
-                      ),
-                    ),
-                    child: Text('Go to navigation rail'),
-                    child: const Text('Go to navigation rail'),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/navRail');
-                    },
-                  ),
-                ],
-              ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/botNavBar');
+              },
+              child: const Text("Go to bottom navigation bar"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/NavRail');
+              },
+              child: const Text("Go to navigation rail"),
             ),
           ],
         ),
-      ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
-//Navigation Rail widget that we call to navigate to a new screen with just the rail
+
 class NavRail extends StatefulWidget {
-  const NavRail({Key? key}) : super(key: key);
+  const NavRail({super.key});
 
   @override
   State<NavRail> createState() => _NavRailState();
 }
 
 class _NavRailState extends State<NavRail> {
-  int _selectedIndex = 0;
-  //Creating private variable for index of what screen to be on
-  int _selectedIndex = 0;
-  //Labeltype for the navigation rail to use later on when creating the builder
-  NavigationRailLabelType labelType = NavigationRailLabelType.all;
+  int _selectedIdx = 0;
+  final NavigationRailLabelType _labelType = NavigationRailLabelType.all;
 
   @override
   Widget build(BuildContext context) {
@@ -140,30 +78,26 @@ class _NavRailState extends State<NavRail> {
         title: const Text('Navigation Rail'),
       ),
       body: Row(
+        //We are using a row to store the Navigation rail on the left side and the containers
+        //on the right side
         children: <Widget>[
+          //1st child is the Navigation Rail w/ all Desitations stored in it
           NavigationRail(
-            labelType: labelType,
-            selectedIndex: _selectedIndex,
-            onDestinationSelected: (int index) {
+            //Defines the layout and behavior of the navigation rail and we
+            //Override the default layout with the variable we stored above
+            labelType: _labelType,
+            //Parameter of navigator widgets that sets the currentIndex stored in
+            //the navigation rail to an externally stored integer
+            selectedIndex: _selectedIdx,
+            //Function w/ int paramter to be called when a different rail destination is selected
+            onDestinationSelected: (index) {
               setState(() {
-          //First child is a NavigationRail widget that houses similar feature to a bottom navigation bar
-          NavigationRail(
-            //LableType defines the layout and behavior of the labels for the default,
-            labelType: labelType,
-            //selectedIndex sets the current index of the rail to the private variable stored above
-            selectedIndex: _selectedIndex,
-            //This is the function called when any of the destinations on the rail are pressed by the user
-            onDestinationSelected: (int index) {
-              setState(() {
-                //setState function to update the private variable with the new index selected as well as update the screen
-                _selectedIndex = index;
+                _selectedIdx = index;
               });
             },
+            //A list of "destinations" w/ different icons & labels & indeces starting at 0
             destinations: const <NavigationRailDestination>[
               NavigationRailDestination(
-              //Created multiple NavigationRailDestinations which are each a part of a list
-              NavigationRailDestination(
-                //Each destination requires an icon and label. 
                 icon: Icon(Icons.favorite_border),
                 selectedIcon: Icon(Icons.favorite),
                 label: Text('Favorite'),
@@ -180,32 +114,26 @@ class _NavRailState extends State<NavRail> {
               ),
             ],
           ),
+          //We us an expanded widget to allow the containers to the right of the
+          //rail to expand and cover the rest of the available screen instead of being
+          //Smushed against the rail
           Expanded(
+            //The indexed stack organizes a list of widgets in order by index
+            //And can switch between them through a passed in idx that we store and update externally
             child: IndexedStack(
-              index: _selectedIndex,
-          //Wrapped an indexStack with an Expanded widget so that the containers extend to the edges of the screen
-          Expanded(
-            //An indexedStack is a widget to store a list of wdigets to display based on the selected index
-            //This is usually paired with a bottom navigation bar or a navigation rail to efffectively display 
-            //different "screens" when clicking on different destinations/icons
-            child: IndexedStack(
-              //Current index is set the private variable we initialized and are updating above
-              index: _selectedIndex,
-              //Children is the list of widgets that we display based on their index
-              //Each index is already set based on the order that they are in in the list
-              //So it starts from 0 -> 1 -> 2 -> ...
+              index: _selectedIdx,
               children: [
                 Container(
                   alignment: Alignment.center,
-                  child: const Text('Favorite'),
+                  child: const Text('favorite'),
                 ),
                 Container(
                   alignment: Alignment.center,
-                  child: const Text('Bookmark'),
+                  child: const Text('bookmark'),
                 ),
                 Container(
                   alignment: Alignment.center,
-                  child: const Text('Star'),
+                  child: const Text('star'),
                 ),
               ],
             ),
@@ -216,17 +144,15 @@ class _NavRailState extends State<NavRail> {
   }
 }
 
-//Bottom Navigation Bar widget
 class BotNavBar extends StatefulWidget {
-  const BotNavBar({Key? key}) : super(key: key);
+  const BotNavBar({super.key});
 
   @override
-  State<BotNavBar> createState() => BotNavBarState();
+  State<BotNavBar> createState() => _BotNavBarState();
 }
 
-class BotNavBarState extends State<BotNavBar> {
-  //Index to keep track of the index of what screen is within the bottom navigation bar
-  int _curNavIdx = 0;
+class _BotNavBarState extends State<BotNavBar> {
+  int curIdx = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -235,7 +161,7 @@ class BotNavBarState extends State<BotNavBar> {
         title: const Text('Bottom Navigation Bar'),
       ),
       body: IndexedStack(
-        index: _curNavIdx,
+        index: curIdx,
         children: [
           Container(
             alignment: Alignment.center,
@@ -252,67 +178,28 @@ class BotNavBarState extends State<BotNavBar> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _curNavIdx,
-        items: const [
-          BottomNavigationBarItem(
-            label: 'home',
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            label: 'profile',
-            icon: Icon(Icons.person),
-          ),
-          BottomNavigationBarItem(
-            label: 'settings',
-      //Setting the body to be an indexedStaack like I did in the navigation rail as we can use a Scaffolding here
-      body: IndexedStack(
-        //Setting the index of the indexed stack to that of the privately stored integer that keeps track of
-        //The index of what button is being pressed in the bottom navigation bar
-        index: _curNavIdx,
-        children: [
-          //Created 3 containers named 'home', 'profile', and 'settings' corresponding to the labels on the 
-          //bottom navigation bar
-          Container(
-            alignment: Alignment.center,
-            child: const Text('Home'),
-          ),
-          Container(
-            alignment: Alignment.center,
-            child: const Text('Profile'),
-          ),
-          Container(
-            alignment: Alignment.center,
-            child: const Text('Settings'),
-          ),
-        ],
-      ),
-      //You can place a bottom navigation bar after the body just like a floating action button
-      bottomNavigationBar: BottomNavigationBar(
-        //Sets the current Index of the bottom navigation bar to the privately stored index above
-        currentIndex: _curNavIdx,
-        items: const [
-          //Inside the items, which is a list of BottomNavigationBarItems, it's similar to the 
-          //Destinations for the navigation rail
-          BottomNavigationBarItem(
-            //Inside each item you will need a label and an icon
-            label: 'Home',
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            label: 'Profile',
-            icon: Icon(Icons.person),
-          ),
-          BottomNavigationBarItem(
-            label: 'Settings',
-            icon: Icon(Icons.settings),
-          ),
-        ],
+        currentIndex: curIdx,
+        //On tap function here is the same as the onDestinationSelected parameter
+        //That was used for the navigation rail
         onTap: ((value) => setState(() {
-          //On tap function called when any of the buttons are pressed
-          //Passes the index value stored into the setState function to update the privately
-          //Stored integer above to update the screen with the IndexedStack
-              _curNavIdx = value;
+              curIdx = value;
             })),
+        //The items here are like the desinations and they store BottomNavigationBarItmes
+        //Each item has an icon and lable like the rail
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'settings',
+          ),
+        ],
       ),
     );
   }
