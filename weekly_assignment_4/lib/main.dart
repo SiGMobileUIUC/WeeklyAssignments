@@ -85,7 +85,7 @@ class _BotNavBarState extends State<BotNavBar> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('BottomNavigationBar'),
-        backgroundColor: Color.fromARGB(255, 172, 112, 207),
+        backgroundColor: const Color.fromARGB(255, 172, 112, 207),
       ),
       body: Center(
         child: IndexedStack(
@@ -131,7 +131,7 @@ class _BotNavBarState extends State<BotNavBar> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color.fromARGB(255, 215, 161, 247),
+        selectedItemColor: const Color.fromARGB(255, 215, 161, 247),
         onTap: _selectIndex,
       ),
     );
@@ -151,20 +151,6 @@ class _NavRailState extends State<NavRail> {
     fontSize: 30,
     fontWeight: FontWeight.bold,
   );
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-  ];
 
   void _selectIndex(int index) {
     setState(() {
