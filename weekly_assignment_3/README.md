@@ -34,7 +34,9 @@
 
 <div align="center">
 Below is a video going over the process behind creating the solution to ListView App!
+</div>
 
+<div align="center">
 <a href="https://www.youtube.com/watch?v=dxjXUnrz_vw">
   <img src="https://img.youtube.com/vi/dxjXUnrz_vw/0.jpg" 
        alt="Tutorial Video" 
