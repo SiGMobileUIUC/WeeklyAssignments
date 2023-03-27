@@ -38,8 +38,8 @@ Below is a video going over the process behind creating the solution to Name Con
 <a href="https://www.youtube.com/watch?v=TY28leJXkI4">
   <img src="https://img.youtube.com/vi/TY28leJXkI4/0.jpg" 
        alt="Tutorial Video" 
-       width="240" 
-       height="180" 
+       width="400" 
+       height="300" 
        border="10" />
 </a>
 </div>
