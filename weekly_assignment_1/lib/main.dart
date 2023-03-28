@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -49,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _buzz = '--';
 
   void _incrementCounter() {
     setState(() {
@@ -58,8 +59,90 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+      /* _buzz = '--';
+      if (_counter % 3 == 0)
+      {
+        _buzz = 'Fizz';
+      }
+      if (_counter % 5 == 0)
+      {
+        _buzz = 'Buzz';
+      }
+      if (_counter % 3 == 0 && _counter % 5 == 0)
+      {
+        _buzz = 'FizzBuzz';
+      } */
     });
   }
+
+  void _decrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter--;
+      /* _buzz = '--';
+      if (_counter % 3 == 0)
+      {
+        _buzz = 'Fizz';
+      }
+      if (_counter % 5 == 0)
+      {
+        _buzz = 'Buzz';
+      }
+      if (_counter % 3 == 0 && _counter % 5 == 0)
+      {
+        _buzz = 'FizzBuzz';
+      } */
+    });
+  }
+
+  String fizzBuzz() {
+    _buzz = '--';
+      if (_counter % 3 == 0)
+      {
+        _buzz = 'Fizz';
+      }
+      if (_counter % 5 == 0)
+      {
+        _buzz = 'Buzz';
+      }
+      if (_counter % 3 == 0 && _counter % 5 == 0)
+      {
+        _buzz = 'FizzBuzz';
+      }
+    return _buzz;
+  }
+
+  void _zeroCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter = 0;
+      /* _buzz = '--';
+      if (_counter % 3 == 0)
+      {
+        _buzz = 'Fizz';
+      }
+      if (_counter % 5 == 0)
+      {
+        _buzz = 'Buzz';
+      }
+      if (_counter % 3 == 0 && _counter % 5 == 0)
+      {
+        _buzz = 'FizzBuzz';
+      } */
+    });
+  }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -102,14 +185,33 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Text(
+              fizzBuzz(),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                  FloatingActionButton(
+                    onPressed: _incrementCounter,
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.add),
+                  ), // This trailing comma makes auto-formatting nicer for build methods.
+                  FloatingActionButton(
+                    onPressed: _zeroCounter,
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.exposure_zero),
+                  ), // This trailing comma makes auto-formatting nicer for build methods.
+                  FloatingActionButton(
+                    onPressed: _decrementCounter,
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.remove),
+                  ), // This trailing comma makes auto-formatting nicer for build methods.
+              ],
+      ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
     );
   }
 }
