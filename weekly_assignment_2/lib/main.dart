@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 labelText: 'Last Name',
               ),
             ),
-            SizedBox(height: 20), // Give some space
+            SizedBox(height: 10), // Give some space
             Text(
               _greetingMessage,
               style: Theme.of(context).textTheme.headline4,
