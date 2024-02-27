@@ -83,12 +83,12 @@ class _MyHomePageState extends State<MyHomePage> {
   String getTextforCount(int value) {
     if (value % 3 == 0) {
       if (value % 5 == 0) {
-        return 'FizzBuzz';
+        return 'fizzbuzz';
       } else {
-        return 'Fizz';
+        return 'fizz';
       }
     } else if (value % 5 == 0) {
-      return 'Buzz';
+      return 'buzz';
     } else {
       return '--';
     }
@@ -142,23 +142,25 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-              FloatingActionButton(
-                onPressed: _decrementCounter,
-                tooltip: 'Decrement',
-                child: const Icon(Icons.remove),
-              ),
-              FloatingActionButton(
-                onPressed: _zeroCounter,
-                tooltip: 'Zero',
-                child: const Icon(Icons.exposure_zero),
-              ),
-              FloatingActionButton(
-                onPressed: _incrementCounter,
-                tooltip: 'Increment',
-                child: const Icon(Icons.add),
-              ),
-            ])
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  FloatingActionButton(
+                    onPressed: _decrementCounter,
+                    tooltip: 'Decrement',
+                    child: const Icon(Icons.remove),
+                  ),
+                  FloatingActionButton(
+                    onPressed: _zeroCounter,
+                    tooltip: 'Zero',
+                    child: const Icon(Icons.exposure_zero),
+                  ),
+                  FloatingActionButton(
+                    onPressed: _incrementCounter,
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.add),
+                  ),
+                ])
           ],
         ),
       ),
