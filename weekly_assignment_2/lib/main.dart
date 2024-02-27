@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -48,21 +50,49 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  String firstNameTemp = '';
+  String lastNameTemp = '';
+  String greeting = '';
 
-  void _incrementCounter() {
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+
+  @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    firstNameController = TextEditingController();
+    lastNameController = TextEditingController();
+  }
+
+  void updateGreeting() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      if (firstNameTemp != '' || lastNameTemp != '') {
+        greeting = 'Hello,';
+        if (firstNameTemp != '') {
+          greeting += ' $firstNameTemp';
+        }
+        if (lastNameTemp != '') {
+          greeting += ' $lastNameTemp';
+        }
+        greeting += '!';
+      } else {
+        greeting = 'No name entered.';
+      }
     });
+    firstNameController.clear();
+    lastNameController.clear();
   }
 
   @override
   Widget build(BuildContext context) {
+    const appTitle = 'Hello';
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -73,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: const Text(appTitle),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -95,21 +125,45 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            TextField(
+              controller: firstNameController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'First Name',
+              ),
+              onChanged: (text) {
+                setState(() {
+                  firstNameTemp = text;
+                });
+              },
             ),
+            TextField(
+              controller: lastNameController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Last Name',
+              ),
+              onChanged: (text) {
+                setState(
+                  () {
+                    lastNameTemp = text;
+                  },
+                );
+              },
+            ),
+            const Divider(),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              greeting,
+              style: const TextStyle(fontSize: 20),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        onPressed: updateGreeting,
+        tooltip: 'Greeting',
+        child: const Icon(Icons.handshake),
+      ),
     );
   }
 }
