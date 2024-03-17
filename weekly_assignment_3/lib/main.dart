@@ -61,55 +61,118 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _onDeleteItemPressed(index) {
+    entries.removeAt(index);
+    setState(() {});
+  }
+
+  Widget _buildList() {
+    return ListView.separated(
+      
+      padding: const EdgeInsets.all(8),
+      itemCount: entries.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Container (
+          height: 50,
+          //color: Color(0xFFB74093 + entries[index] * 10),
+          //child: Text('Index ${entries[index]}'),
+          /*child: Row(
+            mainAxisAlignment:
+            MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                
+                children: <Widget>[
+                  CircleAvatar(
+                  backgroundColor: Color(0xFFB74093 + entries[index] * 1000),
+                  radius: 20,
+                ),
+
+                ]
+                
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  const Text(
+                'I am a ListTile'
+              ),
+              Text(
+                'Index: ${entries[index]}'
+              ),
+                ],
+              ),
+              
+              IconButton(
+                icon: Icon(
+                  Icons.delete_outline,
+                  size: 20.0,
+                  color: Colors.brown[900],
+                ),
+                onPressed: () {
+                     _onDeleteItemPressed(index);
+                },
+              ),
+          ],
+          )*/
+          child: ListTile( 
+            leading: CircleAvatar(backgroundColor: Color(0xFFB74093 + entries[index] * 1000),
+                  radius: 20,),
+            title: Column(
+              children: [ 
+                const Text('I am a ListTile'),
+                Text('Index: ${entries[index]}'),
+              ],
+            ),
+            trailing: IconButton(
+                icon: Icon(
+                  Icons.delete_outline,
+                  size: 20.0,
+                  color: Colors.brown[900],
+                ),
+                onPressed: () {
+                     _onDeleteItemPressed(index);
+                },
+              ),
+          ),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) => const Divider(),
+    );
+  }
+
+  final List<int> entries = <int>[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+  final List<Color> colors = <Color> [Colors.cyan, Colors.teal, Colors.green, Colors.lime, Colors.yellow];
+  final List<int> Hues = <int> [100, 300, 500, 700];
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+    appBar: AppBar(
+        
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text('Weekly Assignment 3'),
+        backgroundColor: Colors.blue[400],
+      ),
+      body: Center(
+        child: Column( 
+          mainAxisAlignment:  MainAxisAlignment.center,
+          children: <Widget> [
+            Expanded(child: _buildList(),)
+          ],
+        )
+
+      )
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+     
     );
   }
 }
+
