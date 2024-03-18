@@ -74,49 +74,6 @@ class _MyHomePageState extends State<MyHomePage> {
       itemBuilder: (BuildContext context, int index) {
         return Container (
           height: 50,
-          //color: Color(0xFFB74093 + entries[index] * 10),
-          //child: Text('Index ${entries[index]}'),
-          /*child: Row(
-            mainAxisAlignment:
-            MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                
-                children: <Widget>[
-                  CircleAvatar(
-                  backgroundColor: Color(0xFFB74093 + entries[index] * 1000),
-                  radius: 20,
-                ),
-
-                ]
-                
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  const Text(
-                'I am a ListTile'
-              ),
-              Text(
-                'Index: ${entries[index]}'
-              ),
-                ],
-              ),
-              
-              IconButton(
-                icon: Icon(
-                  Icons.delete_outline,
-                  size: 20.0,
-                  color: Colors.brown[900],
-                ),
-                onPressed: () {
-                     _onDeleteItemPressed(index);
-                },
-              ),
-          ],
-          )*/
           child: ListTile( 
             leading: CircleAvatar(backgroundColor: Color(0xFFB74093 + entries[index] * 1000),
                   radius: 20,),
