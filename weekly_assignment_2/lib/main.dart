@@ -60,6 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  String firstName = "";
+  String lastName = "";
+  String fullName = "";
 
   @override
   Widget build(BuildContext context) {
@@ -95,21 +100,47 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            TextField(
+              controller: firstNameController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'First Name',
+              ),
+              onChanged: (text) {
+                setState(() {
+                  firstName = text;
+                });
+              } ,
+            ),
+            TextField(
+              controller: lastNameController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Last Name',
+              ),
+              onChanged: (text) {
+                setState(() {
+                  lastName = text;
+                });
+              } ,
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              '$fullName',
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                setState(() {
+                  fullName = 'Hello ' + firstName  + ' ' + lastName;
+
+                });
+              },
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
